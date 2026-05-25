@@ -5,1298 +5,974 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>공통 스타일 가이드</title>
 <style>
-  :root {
-    --main: #003c72;
-    --sub01: #d8ecfe;
-    --sub02: #eef4fa;
-    --sub03: #809eb9;
-    --sub04: #ffda0a;
-    --gray01: #b0b0b0;
-    --gray02: #a2a3a3;
-    --white: #f2f2f2;
-    --txt: #333333;
-    --bg: #f8f9fc;
-    --surface: #ffffff;
-    --border: #e4e8ef;
-    --nav-w: 220px;
-    --accent: #003c72;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-    background: var(--bg);
-    color: var(--txt);
-    display: flex;
-    min-height: 100vh;
-    font-size: 14px;
-    line-height: 1.6;
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',sans-serif;
+  background:#fff;
+  color:#111;
+  font-size:13px;
+  line-height:1.6;
+}
 
-  nav {
-    position: fixed;
-    top: 0; left: 0;
-    width: var(--nav-w);
-    height: 100vh;
-    background: var(--surface);
-    border-right: 1px solid var(--border);
-    padding: 32px 0;
-    overflow-y: auto;
-    z-index: 100;
-  }
-  nav .logo {
-    padding: 0 24px 24px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 16px;
-  }
-  nav .logo span {
-    display: block;
-    font-size: 11px;
-    color: var(--gray01);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  nav .logo strong {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--main);
-  }
-  nav ul { list-style: none; }
-  nav ul li a {
-    display: block;
-    padding: 8px 24px;
-    color: #666;
-    text-decoration: none;
-    font-size: 13px;
-    transition: all 0.15s;
-    border-left: 2px solid transparent;
-  }
-  nav ul li a:hover { color: var(--main); background: var(--sub02); }
-  nav ul li a.active { color: var(--main); font-weight: 600; border-left-color: var(--main); background: var(--sub01); }
-  nav ul li .nav-group {
-    padding: 16px 24px 6px;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gray01);
-    font-weight: 600;
-  }
+/* ── HERO ── */
+.hero{
+  background:#0a0a0a;
+  color:#fff;
+  padding:72px 64px 64px;
+}
+.hero-eyebrow{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#666;
+  margin-bottom:20px;
+}
+.hero-title{
+  font-size:42px;
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.15;
+  margin-bottom:16px;
+  color:#fff;
+}
+.hero-desc{
+  font-size:14px;
+  color:#888;
+  max-width:480px;
+  line-height:1.7;
+  margin-bottom:28px;
+}
+.hero-meta{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:#1a1a1a;
+  border:1px solid #333;
+  color:#aaa;
+  font-size:11px;
+  letter-spacing:.06em;
+  padding:5px 12px;
+  border-radius:20px;
+}
+.hero-badge b{color:#fff}
+.hero-rule{
+  font-size:11px;
+  color:#555;
+  padding:12px 0 0;
+  border-top:1px solid #1f1f1f;
+  margin-top:28px;
+  max-width:520px;
+}
 
-  main {
-    margin-left: var(--nav-w);
-    flex: 1;
-    padding: 48px 56px;
-    max-width: 960px;
-  }
+/* ── LAYOUT ── */
+.page{max-width:860px;margin:0 auto;padding:0 64px 120px}
 
-  .page-title {
-    margin-bottom: 48px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .page-title .tag {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sub03);
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  .page-title h1 {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--main);
-    margin-bottom: 8px;
-  }
-  .page-title p { color: #888; font-size: 14px; }
+/* ── SECTION ── */
+.sec{
+  padding:64px 0 0;
+  border-top:1px solid #e8e8e8;
+  margin-top:64px;
+}
+.sec:first-child{margin-top:0;border-top:none;padding-top:56px}
+.sec-eyebrow{
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#999;
+  margin-bottom:32px;
+}
+.sec-sub{
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#bbb;
+  margin:40px 0 16px;
+}
+.divider{height:1px;background:#f0f0f0;margin:32px 0}
 
-  section { margin-bottom: 64px; scroll-margin-top: 32px; }
-  .sec-title {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sub03);
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  h2.sec-title { font-size: 11px; }
+/* ── COLOR SWATCHES ── */
+.swatch-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(100px,1fr));
+  gap:2px;
+  margin-bottom:2px;
+}
+.swatch-row.main-row{grid-template-columns:repeat(5,1fr)}
+.swatch-row.gray-row{grid-template-columns:repeat(4,1fr)}
+.swatch{
+  border-radius:0;
+  overflow:hidden;
+}
+.swatch-color{height:88px}
+.swatch-info{padding:10px 10px 12px;background:#fafafa;border:1px solid #f0f0f0}
+.swatch-name{font-size:11px;font-weight:600;color:#111;margin-bottom:2px}
+.swatch-var{font-size:10px;font-family:monospace;color:#999;margin-bottom:1px}
+.swatch-hex{font-size:10px;font-family:monospace;color:#bbb}
+.swatch:first-child{border-radius:8px 0 0 8px}
+.swatch:last-child{border-radius:0 8px 8px 0}
 
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 16px;
-  }
-  .card-label {
-    font-size: 11px;
-    color: var(--gray01);
-    letter-spacing: 0.06em;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-  }
+/* ── COLOR UTILITY ── */
+.cu-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:8px;
+}
+.cu-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 12px;
+  border:1px solid #efefef;
+  border-radius:6px;
+  font-size:11px;
+}
+.cu-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.08)}
+.cu-class{font-family:monospace;color:#003c72}
+.cu-hex{color:#bbb;font-family:monospace}
 
-  .swatch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-  }
-  .swatch {
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-  .swatch-color {
-    height: 72px;
-  }
-  .swatch-info {
-    padding: 10px 12px;
-    background: var(--surface);
-  }
-  .swatch-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--txt);
-    margin-bottom: 2px;
-  }
-  .swatch-var {
-    font-size: 11px;
-    color: var(--gray01);
-    font-family: monospace;
-    margin-bottom: 2px;
-  }
-  .swatch-hex {
-    font-size: 11px;
-    color: var(--gray02);
-    font-family: monospace;
-  }
+/* ── TYPOGRAPHY ── */
+.typo-block{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  align-items:baseline;
+  gap:24px;
+  padding:20px 0;
+  border-bottom:1px solid #f2f2f2;
+}
+.typo-block:last-child{border-bottom:none}
+.typo-meta{}
+.t-class{
+  font-family:monospace;
+  font-size:11px;
+  background:#eef4fa;
+  color:#003c72;
+  padding:2px 7px;
+  border-radius:4px;
+  display:inline-block;
+  margin-bottom:5px;
+}
+.t-detail{font-size:10px;color:#bbb;line-height:1.6}
+.typo-preview{color:#111;word-break:keep-all}
 
-  .typo-row {
-    display: flex;
-    align-items: baseline;
-    gap: 24px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .typo-row:last-child { border-bottom: none; }
-  .typo-meta {
-    min-width: 180px;
-    flex-shrink: 0;
-  }
-  .typo-class {
-    font-family: monospace;
-    font-size: 12px;
-    color: #003c72;
-    background: var(--sub01);
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 4px;
-  }
-  .typo-detail {
-    font-size: 11px;
-    color: var(--gray01);
-    line-height: 1.5;
-  }
-  .typo-preview { flex: 1; color: var(--txt); }
+.weight-row{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:10px 0;
+  border-bottom:1px solid #f5f5f5;
+}
+.weight-row:last-child{border-bottom:none}
+.w-class{font-family:monospace;font-size:11px;background:#eef4fa;color:#003c72;padding:2px 7px;border-radius:4px;min-width:52px;text-align:center}
+.w-preview{font-size:16px;color:#111}
 
-  .space-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .space-row:last-child { border-bottom: none; }
-  .space-bar-wrap { flex: 1; }
-  .space-bar {
-    height: 24px;
-    background: var(--sub01);
-    border-radius: 4px;
-    border: 1px solid var(--sub03);
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 8px;
-  }
-  .space-bar span {
-    font-size: 11px;
-    color: var(--main);
-    font-family: monospace;
-    font-weight: 600;
-  }
-  .space-meta { min-width: 200px; }
-  .space-var {
-    font-family: monospace;
-    font-size: 12px;
-    color: var(--main);
-    background: var(--sub01);
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 2px;
-  }
-  .space-desc { font-size: 11px; color: var(--gray01); }
+.align-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.align-chip{font-family:monospace;font-size:11px;padding:4px 10px;border:1px solid #efefef;border-radius:5px;color:#003c72;background:#eef4fa}
 
-  .icon-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-  .icon-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px 16px;
-    text-align: center;
-  }
-  .icon-box {
-    background: var(--sub02);
-    border-radius: 6px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  .icon-box .dot {
-    background: var(--main);
-    border-radius: 2px;
-  }
-  .icon-class {
-    font-family: monospace;
-    font-size: 12px;
-    color: var(--main);
-    background: var(--sub01);
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 4px;
-  }
-  .icon-size { font-size: 12px; color: var(--gray01); margin-bottom: 2px; }
-  .icon-use { font-size: 11px; color: #aaa; line-height: 1.4; }
+/* ── SPACING VISUAL — 핵심: 실제 px 높이 ── */
+.space-group{margin-bottom:48px}
+.space-group:last-child{margin-bottom:0}
+.space-group-title{
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#bbb;
+  margin-bottom:20px;
+}
 
-  .layout-diagram {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    text-align: center;
-    position: relative;
-  }
-  .layout-layer {
-    border: 1.5px dashed;
-    border-radius: 8px;
-    padding: 12px;
-    position: relative;
-    margin: 0 auto;
-  }
-  .layout-layer-label {
-    position: absolute;
-    top: -10px;
-    left: 16px;
-    background: var(--surface);
-    padding: 0 6px;
-    font-family: monospace;
-    font-size: 11px;
-    font-weight: 600;
-  }
-  .layout-content {
-    background: var(--sub02);
-    border-radius: 4px;
-    padding: 12px;
-    font-size: 12px;
-    color: var(--sub03);
-    font-style: italic;
-    margin-top: 8px;
-  }
+.sp-item{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  align-items:flex-start;
+  gap:24px;
+  margin-bottom:24px;
+}
+.sp-meta{}
+.sp-var{
+  font-family:monospace;
+  font-size:11px;
+  background:#eef4fa;
+  color:#003c72;
+  padding:2px 7px;
+  border-radius:4px;
+  display:inline-block;
+  margin-bottom:4px;
+}
+.sp-desc{font-size:10px;color:#bbb;line-height:1.6}
+.sp-fixed{font-size:10px;font-weight:600;color:#1a7a40}
 
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.sp-visual{display:flex;flex-direction:column;gap:3px}
+.sp-box{
+  border-radius:4px;
+  background:#eef4fa;
+  border:1px solid #d8ecfe;
+  display:flex;
+  align-items:center;
+  padding:0 10px;
+  flex-shrink:0;
+}
+.sp-box-label{
+  font-family:monospace;
+  font-size:10px;
+  color:#003c72;
+  font-weight:600;
+  white-space:nowrap;
+}
+.sp-box-sub{
+  font-size:9px;
+  color:#809eb9;
+  margin-left:6px;
+}
+.sp-box.fixed{
+  background:#e6f7ee;
+  border-color:#b7e2c8;
+}
+.sp-box.fixed .sp-box-label{color:#1a7a40}
+.sp-box.fixed .sp-box-sub{color:#52a96e}
 
-  .visibility-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-  .vis-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
-  }
-  .vis-class {
-    font-family: monospace;
-    font-size: 12px;
-    color: var(--main);
-    background: var(--sub01);
-    padding: 3px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 10px;
-  }
-  .vis-row {
-    display: flex;
-    gap: 4px;
-    justify-content: center;
-    margin-top: 4px;
-  }
-  .vis-dot {
-    width: 28px;
-    height: 20px;
-    border-radius: 3px;
-    font-size: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-  .vis-on { background: #003c7220; color: var(--main); }
-  .vis-off { background: #f0f0f0; color: #bbb; }
+/* gap 시각화: 가로 방향 */
+.gap-item{margin-bottom:28px}
+.gap-visual{
+  display:flex;
+  align-items:stretch;
+  gap:0;
+  margin-top:8px;
+}
+.gap-block{
+  height:40px;
+  background:#003c72;
+  border-radius:4px;
+  flex-shrink:0;
+  width:60px;
+}
+.gap-spacer{
+  background:#eef4fa;
+  border-top:2px dashed #d8ecfe;
+  border-bottom:2px dashed #d8ecfe;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.gap-spacer-label{
+  font-family:monospace;
+  font-size:10px;
+  color:#003c72;
+  font-weight:600;
+  white-space:nowrap;
+}
+.gap-spacer.fixed{
+  background:#e6f7ee;
+  border-top-color:#b7e2c8;
+  border-bottom-color:#b7e2c8;
+}
+.gap-spacer.fixed .gap-spacer-label{color:#1a7a40}
 
-  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-  .tag {
-    font-family: monospace;
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    color: var(--main);
-    background: var(--sub01);
-  }
+/* ── ICON ── */
+.icon-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.icon-card{
+  background:#fafafa;
+  border:1px solid #f0f0f0;
+  border-radius:10px;
+  padding:24px 16px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+.icon-preview{
+  background:#fff;
+  border:1px solid #efefef;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.icon-dot{background:#003c72;border-radius:3px;flex-shrink:0}
+.icon-info{text-align:center}
+.icon-class{font-family:monospace;font-size:11px;background:#eef4fa;color:#003c72;padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:3px}
+.icon-px{font-size:11px;color:#bbb}
+.icon-use{font-size:10px;color:#ccc;line-height:1.5;margin-top:2px}
 
-  .rule-list { list-style: none; }
-  .rule-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    font-size: 13px;
-  }
-  .rule-list li:last-child { border-bottom: none; }
-  .rule-list li .no {
-    width: 20px;
-    height: 20px;
-    background: #ff4d4d18;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    color: #e03;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .rule-list li .txt { flex: 1; color: var(--txt); }
-  .rule-list li .alt {
-    font-family: monospace;
-    font-size: 11px;
-    color: #1a7a40;
-    background: #e6f7ee;
-    padding: 2px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    align-self: center;
-  }
+/* ── LAYOUT DIAGRAM ── */
+.layout-diagram{
+  background:#fafafa;
+  border:1px solid #f0f0f0;
+  border-radius:12px;
+  padding:32px;
+}
+.ld-layer{
+  border-radius:6px;
+  padding:12px;
+  position:relative;
+}
+.ld-label{
+  font-family:monospace;
+  font-size:10px;
+  font-weight:600;
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.ld-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ld-content{
+  background:#fff;
+  border:1px dashed #e0e0e0;
+  border-radius:4px;
+  padding:12px;
+  text-align:center;
+  font-size:11px;
+  color:#ccc;
+  margin-top:4px;
+}
 
-  code {
-    font-family: monospace;
-    font-size: 12px;
-    color: var(--main);
-    background: var(--sub01);
-    padding: 1px 6px;
-    border-radius: 4px;
-  }
+.layout-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12px}
+.layout-table th{text-align:left;padding:8px 12px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#bbb;border-bottom:1px solid #f0f0f0;font-weight:500}
+.layout-table td{padding:10px 12px;border-bottom:1px solid #f7f7f7;vertical-align:top}
+.layout-table tr:last-child td{border-bottom:none}
+.layout-table .cls{font-family:monospace;color:#003c72;font-size:11px}
+.layout-table .pad{font-family:monospace;font-size:11px;color:#888}
+.layout-table .role{color:#555;font-size:11px}
+.layout-table .warn{color:#e03;font-size:10px;font-weight:600;margin-top:2px}
 
-  .version-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--sub01);
-    color: var(--main);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--sub03);
-  }
+/* ── BREAKPOINTS ── */
+.bp-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:24px;
+}
+.bp-card{padding:24px;background:#fafafa}
+.bp-card:first-child{border-radius:10px 0 0 10px}
+.bp-card:last-child{border-radius:0 10px 10px 0}
+.bp-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:8px}
+.bp-range{font-size:22px;font-weight:700;margin-bottom:4px}
+.bp-cond{font-family:monospace;font-size:10px;color:#bbb;margin-bottom:8px}
+.bp-note{font-size:10px;color:#ccc}
 
-  @media (max-width: 900px) {
-    nav { display: none; }
-    main { margin-left: 0; padding: 32px 24px; }
-    .icon-grid { grid-template-columns: repeat(2, 1fr); }
-    .visibility-grid { grid-template-columns: repeat(2, 1fr); }
-    .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  }
+.bp-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px}
+.bp-table th{text-align:left;padding:6px 10px;font-size:10px;color:#bbb;border-bottom:1px solid #f0f0f0;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.bp-table td{padding:8px 10px;border-bottom:1px solid #f7f7f7}
+.bp-table tr:last-child td{border-bottom:none}
+.bp-table .var{font-family:monospace;color:#003c72}
+.bp-table .pc{color:#111}
+.bp-table .tab{color:#809eb9}
+.bp-table .mo{color:#b8870a}
+.bp-table .fix{color:#1a7a40;font-weight:600}
+.bp-table tr.fixed-row td{background:#f4fbf6}
+
+/* ── VISIBILITY ── */
+.vis-table{width:100%;border-collapse:collapse;font-size:11px}
+.vis-table th{text-align:left;padding:8px 12px;font-size:10px;color:#bbb;border-bottom:1px solid #f0f0f0;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+.vis-table td{padding:10px 12px;border-bottom:1px solid #f7f7f7;vertical-align:middle}
+.vis-table tr:last-child td{border-bottom:none}
+.vis-cls{font-family:monospace;color:#003c72;font-size:11px}
+.vis-on{display:inline-block;background:#003c7215;color:#003c72;font-size:10px;font-weight:600;padding:3px 10px;border-radius:12px}
+.vis-off{display:inline-block;background:#f5f5f5;color:#ccc;font-size:10px;padding:3px 10px;border-radius:12px}
+
+/* ── LIST ── */
+.list-preview{
+  background:#fafafa;
+  border:1px solid #f0f0f0;
+  border-radius:10px;
+  padding:20px 24px;
+}
+.mock-lst-sub{font-weight:700;font-size:13px;margin-bottom:6px;color:#111}
+.mock-lst-item{
+  position:relative;
+  padding-left:14px;
+  font-size:13px;
+  color:#444;
+  padding-bottom:3px;
+}
+.mock-dot{position:absolute;left:2px;top:.6em;width:3px;height:3px;border-radius:50%;background:#333;display:block}
+.mock-dash{position:absolute;left:4px;top:.68em;width:5px;height:1px;background:#333;display:block}
+.mock-no-dash{padding-left:4px}
+
+/* ── UI COMPONENTS ── */
+.ui-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.ui-card{
+  background:#fafafa;
+  border:1px solid #f0f0f0;
+  border-radius:10px;
+  padding:24px;
+}
+.ui-card-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:16px}
+
+/* ── RULES ── */
+.rule-item{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:12px 0;
+  border-bottom:1px solid #f5f5f5;
+}
+.rule-item:last-child{border-bottom:none}
+.rule-txt{font-size:12px;color:#555;display:flex;align-items:flex-start;gap:8px}
+.rule-x{color:#e03;font-size:12px;font-weight:700;flex-shrink:0}
+.rule-alt{font-family:monospace;font-size:10px;color:#1a7a40;background:#e6f7ee;padding:3px 9px;border-radius:4px;white-space:nowrap}
+
+/* ── TOKEN PILL ── */
+.pill{display:inline-flex;align-items:center;gap:5px;background:#eef4fa;border:1px solid #d8ecfe;padding:3px 9px;border-radius:5px;font-family:monospace;font-size:11px;color:#003c72;margin:3px}
+
+/* ── NAMING ── */
+.naming-box{
+  background:#0a0a0a;
+  border-radius:8px;
+  padding:18px 20px;
+  font-family:monospace;
+  font-size:13px;
+  color:#fff;
+  letter-spacing:.02em;
+  margin:12px 0;
+}
+.naming-box .hl{color:#ffda0a}
+.naming-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px}
+.naming-table th{text-align:left;padding:6px 10px;font-size:10px;color:#bbb;border-bottom:1px solid #f0f0f0;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.naming-table td{padding:8px 10px;border-bottom:1px solid #f7f7f7;vertical-align:top}
+.naming-table tr:last-child td{border-bottom:none}
+.naming-table .col1{font-family:monospace;color:#003c72;font-size:11px}
+.naming-table .col2{color:#555;font-size:11px}
+.naming-table .col3{font-family:monospace;font-size:10px;color:#888}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="logo">
-    <span>Design System</span>
-    <strong>공통 스타일 가이드</strong>
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Design System · v1.4</p>
+  <h1 class="hero-title">공통 스타일 가이드</h1>
+  <p class="hero-desc">팀 공통 CSS 변수·클래스 규칙을 정의합니다. 승인 없이 :root 변수 및 공통 클래스를 수정하지 않습니다.</p>
+  <div class="hero-meta">
+    <span class="hero-badge"><b>prefix</b> --one-</span>
+    <span class="hero-badge"><b>구분자</b> - 대시만</span>
+    <span class="hero-badge"><b>선언</b> :root 전용</span>
+    <span class="hero-badge"><b>브레이크포인트</b> 1024 · 639</span>
   </div>
-  <ul>
-    <li><span class="nav-group">기초</span></li>
-    <li><a href="#colors">색상</a></li>
-    <li><a href="#typography">타이포그래피</a></li>
-    <li><a href="#spacing">여백</a></li>
-    <li><a href="#icons">아이콘</a></li>
-    <li><span class="nav-group">레이아웃</span></li>
-    <li><a href="#layout">레이아웃 구조</a></li>
-    <li><a href="#breakpoints">반응형 · 가시성</a></li>
-    <li><span class="nav-group">유틸리티</span></li>
-    <li><a href="#list">리스트</a></li>
-    <li><a href="#ui">UI 컴포넌트</a></li>
-    <li><span class="nav-group">규칙</span></li>
-    <li><a href="#naming">네이밍 컨벤션</a></li>
-    <li><a href="#rules">사용 금지</a></li>
-  </ul>
-</nav>
+  <p class="hero-rule">미디어 쿼리 내에서는 기존 변수 재정의만 허용합니다. 신규 변수 추가 금지.</p>
+</div>
 
-<main>
+<div class="page">
 
-  <div class="page-title">
-    <div class="tag">Common Style Guide</div>
-    <h1>공통 스타일 가이드</h1>
-    <p>팀 공통 CSS 변수·클래스 규칙 정의. 승인 없이 <code>:root</code> 변수 및 공통 클래스를 수정하지 않습니다.</p>
-    <div style="margin-top:16px;">
-      <span class="version-badge">v1.4</span>
+<!-- ── 색상 ── -->
+<section class="sec" id="colors">
+  <p class="sec-eyebrow">Color — 색상</p>
+
+  <p class="sec-sub">메인 · 서브 컬러</p>
+  <div class="swatch-row main-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#003c72"></div>
+      <div class="swatch-info"><div class="swatch-name">메인</div><div class="swatch-var">--main-color</div><div class="swatch-hex">#003c72</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#d8ecfe"></div>
+      <div class="swatch-info"><div class="swatch-name">서브 1</div><div class="swatch-var">--sub-color01</div><div class="swatch-hex">#d8ecfe</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#eef4fa"></div>
+      <div class="swatch-info"><div class="swatch-name">서브 2</div><div class="swatch-var">--sub-color02</div><div class="swatch-hex">#eef4fa</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#809eb9"></div>
+      <div class="swatch-info"><div class="swatch-name">서브 3</div><div class="swatch-var">--sub-color03</div><div class="swatch-hex">#809eb9</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ffda0a"></div>
+      <div class="swatch-info"><div class="swatch-name">서브 4 · 강조</div><div class="swatch-var">--sub-color04</div><div class="swatch-hex">#ffda0a</div></div>
     </div>
   </div>
 
-  <!-- 색상 -->
-  <section id="colors">
-    <h2 class="sec-title">색상 · Color</h2>
+  <p class="sec-sub">그레이 · 텍스트</p>
+  <div class="swatch-row gray-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#b0b0b0"></div>
+      <div class="swatch-info"><div class="swatch-name">그레이 1</div><div class="swatch-var">--gray-color01</div><div class="swatch-hex">#b0b0b0</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#a2a3a3"></div>
+      <div class="swatch-info"><div class="swatch-name">그레이 2</div><div class="swatch-var">--gray-color02</div><div class="swatch-hex">#a2a3a3</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#f2f2f2;border:1px solid #eee"></div>
+      <div class="swatch-info"><div class="swatch-name">화이트</div><div class="swatch-var">--white-color</div><div class="swatch-hex">#f2f2f2</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#333333"></div>
+      <div class="swatch-info"><div class="swatch-name">기본 텍스트</div><div class="swatch-var">--one-txt-color</div><div class="swatch-hex">#333333</div></div>
+    </div>
+  </div>
 
-    <div class="card">
-      <div class="card-label">메인 · 서브 컬러</div>
-      <div class="swatch-grid">
-        <div class="swatch">
-          <div class="swatch-color" style="background:#003c72;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">메인</div>
-            <div class="swatch-var">--main-color</div>
-            <div class="swatch-hex">#003c72</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#d8ecfe;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">서브 1</div>
-            <div class="swatch-var">--sub-color01</div>
-            <div class="swatch-hex">#d8ecfe</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#eef4fa;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">서브 2</div>
-            <div class="swatch-var">--sub-color02</div>
-            <div class="swatch-hex">#eef4fa</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#809eb9;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">서브 3</div>
-            <div class="swatch-var">--sub-color03</div>
-            <div class="swatch-hex">#809eb9</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#ffda0a;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">서브 4 · 강조</div>
-            <div class="swatch-var">--sub-color04</div>
-            <div class="swatch-hex">#ffda0a</div>
-          </div>
+  <div class="divider"></div>
+  <p style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:12px;">색상 유틸리티 클래스 — 각 계열 01은 번호 생략</p>
+  <div class="cu-grid">
+    <div class="cu-chip"><div class="cu-dot" style="background:#003c72"></div><span class="cu-class">.m-color</span></div>
+    <div class="cu-chip"><div class="cu-dot" style="background:#d8ecfe;border-color:#ccc"></div><span class="cu-class">.sb-color</span></div>
+    <div class="cu-chip"><div class="cu-dot" style="background:#eef4fa;border-color:#ccc"></div><span class="cu-class">.sb02-color</span></div>
+    <div class="cu-chip"><div class="cu-dot" style="background:#809eb9"></div><span class="cu-class">.sb03-color</span></div>
+    <div class="cu-chip"><div class="cu-dot" style="background:#ffda0a;border-color:#e6c800"></div><span class="cu-class">.sb04-color</span></div>
+    <div class="cu-chip"><div class="cu-dot" style="background:#b0b0b0"></div><span class="cu-class">.gray-color</span></div>
+    <div class="cu-chip"><div class="cu-dot" style="background:#a2a3a3"></div><span class="cu-class">.gray-color02</span></div>
+    <div class="cu-chip"><div class="cu-dot" style="background:#f2f2f2;border-color:#ccc"></div><span class="cu-class">.w-color</span></div>
+  </div>
+</section>
+
+<!-- ── 타이포그래피 ── -->
+<section class="sec" id="typography">
+  <p class="sec-eyebrow">Typography — 타이포그래피</p>
+  <p style="font-size:11px;color:#bbb;margin-bottom:24px;">모든 타입 클래스는 <span style="font-family:monospace;background:#eef4fa;color:#003c72;padding:1px 6px;border-radius:3px">.txt-wrap</span> 하위에서만 사용합니다. line-height 기본값 1.6 / .lh-lg 클래스로 1.3 개별 적용.</p>
+
+  <div class="typo-block">
+    <div class="typo-meta"><span class="t-class">.hd1</span><div class="t-detail">48px · w700 · lh 1.6<br>태블릿 46px · 모바일 8.2vw</div></div>
+    <div class="typo-preview" style="font-size:48px;font-weight:700;line-height:1.2;letter-spacing:-.02em">Heading 1</div>
+  </div>
+  <div class="typo-block">
+    <div class="typo-meta"><span class="t-class">.hd2</span><div class="t-detail">40px · w600 · lh 1.6<br>태블릿 38px · 모바일 7vw</div></div>
+    <div class="typo-preview" style="font-size:40px;font-weight:600;line-height:1.2;letter-spacing:-.02em">Heading 2</div>
+  </div>
+  <div class="typo-block">
+    <div class="typo-meta"><span class="t-class">.hd3</span><div class="t-detail">32px · w500 · lh 1.6<br>태블릿 30px · 모바일 6vw</div></div>
+    <div class="typo-preview" style="font-size:32px;font-weight:500;line-height:1.2;letter-spacing:-.02em">Heading 3</div>
+  </div>
+  <div class="typo-block">
+    <div class="typo-meta"><span class="t-class">.p-tit</span><div class="t-detail">24px · w500 · lh 1.6<br>태블릿 20px · 모바일 5vw</div></div>
+    <div class="typo-preview" style="font-size:24px;font-weight:500">단락 제목 Paragraph Title</div>
+  </div>
+  <div class="typo-block">
+    <div class="typo-meta"><span class="t-class">.ft-body</span><div class="t-detail">18px · w400 · lh 1.6<br>태블릿 16px · 모바일 3.7vw</div></div>
+    <div class="typo-preview" style="font-size:18px;font-weight:400;line-height:1.6">본문 텍스트입니다. 가독성을 위해 letter-spacing -0.02em 적용.</div>
+  </div>
+  <div class="typo-block">
+    <div class="typo-meta"><span class="t-class">.cp-txt</span><div class="t-detail">15px · w400 · lh 1.6<br>태블릿 13px · 모바일 2.7vw</div></div>
+    <div class="typo-preview" style="font-size:15px;font-weight:400;color:#888">캡션 · 보조 텍스트 Caption text</div>
+  </div>
+  <div class="typo-block">
+    <div class="typo-meta"><span class="t-class">.txt-help</span><div class="t-detail">15px · --caption · gray<br>단독 사용 가능<br>모바일 12px 고정</div></div>
+    <div class="typo-preview" style="font-size:15px;color:#b0b0b0">도움말 · 보조 안내 텍스트</div>
+  </div>
+
+  <div class="divider"></div>
+  <p class="sec-sub">폰트 굵기</p>
+  <div class="weight-row"><span class="w-class">.ft-b</span><span class="w-preview" style="font-weight:700">Bold 700 — 강조 텍스트</span></div>
+  <div class="weight-row"><span class="w-class">.ft-sb</span><span class="w-preview" style="font-weight:600">Semibold 600 — 서브 강조</span></div>
+  <div class="weight-row"><span class="w-class">.ft-r</span><span class="w-preview" style="font-weight:400">Regular 400 — 기본 본문</span></div>
+  <div class="weight-row"><span class="w-class">.ft-l</span><span class="w-preview" style="font-weight:300">Light 300 — 경량 텍스트</span></div>
+
+  <div class="divider"></div>
+  <p class="sec-sub">정렬 · 꾸밈</p>
+  <div class="align-row">
+    <span class="align-chip">.txt-lf</span>
+    <span class="align-chip">.txt-ct</span>
+    <span class="align-chip">.txt-rg</span>
+    <span class="align-chip">.txt-ul</span>
+    <span class="align-chip">.txt-uc</span>
+    <span class="align-chip">.sub-ft</span>
+    <span class="align-chip">.lh-lg (1.3)</span>
+  </div>
+</section>
+
+<!-- ── 여백 ── -->
+<section class="sec" id="spacing">
+  <p class="sec-eyebrow">Spacing — 여백</p>
+  <p style="font-size:11px;color:#bbb;margin-bottom:32px;">두 계열을 반드시 구분합니다. <b style="color:#555">space</b> = 섹션·컨테이너 간 / <b style="color:#555">gap</b> = 요소 간</p>
+
+  <!-- SPACE: 세로 실제 높이 시각화 -->
+  <div class="space-group">
+    <p class="space-group-title">섹션·컨테이너 간 여백 — space</p>
+
+    <div class="sp-item">
+      <div class="sp-meta">
+        <div class="sp-var">--one-space-xl</div>
+        <div class="sp-desc">PC 120px · 태블릿 100px · 모바일 15vw</div>
+      </div>
+      <div class="sp-visual">
+        <div class="sp-box" style="height:120px"><span class="sp-box-label">120px</span><span class="sp-box-sub">PC</span></div>
+        <div class="sp-box" style="height:60px;opacity:.6"><span class="sp-box-label">100px</span><span class="sp-box-sub">tablet</span></div>
+        <div class="sp-box" style="height:36px;opacity:.4"><span class="sp-box-label">15vw</span><span class="sp-box-sub">mobile</span></div>
+      </div>
+    </div>
+    <div class="sp-item">
+      <div class="sp-meta">
+        <div class="sp-var">--one-space-lg</div>
+        <div class="sp-desc">PC 100px · 태블릿 80px · 모바일 12.5vw</div>
+      </div>
+      <div class="sp-visual">
+        <div class="sp-box" style="height:100px"><span class="sp-box-label">100px</span><span class="sp-box-sub">PC</span></div>
+        <div class="sp-box" style="height:56px;opacity:.6"><span class="sp-box-label">80px</span><span class="sp-box-sub">tablet</span></div>
+        <div class="sp-box" style="height:32px;opacity:.4"><span class="sp-box-label">12.5vw</span><span class="sp-box-sub">mobile</span></div>
+      </div>
+    </div>
+    <div class="sp-item">
+      <div class="sp-meta">
+        <div class="sp-var">--one-space-r</div>
+        <div class="sp-desc">PC 80px · 태블릿 54px · 모바일 11vw</div>
+      </div>
+      <div class="sp-visual">
+        <div class="sp-box" style="height:80px"><span class="sp-box-label">80px</span><span class="sp-box-sub">PC</span></div>
+        <div class="sp-box" style="height:44px;opacity:.6"><span class="sp-box-label">54px</span><span class="sp-box-sub">tablet</span></div>
+        <div class="sp-box" style="height:28px;opacity:.4"><span class="sp-box-label">11vw</span><span class="sp-box-sub">mobile</span></div>
+      </div>
+    </div>
+    <div class="sp-item">
+      <div class="sp-meta">
+        <div class="sp-var">--one-space-s</div>
+        <div class="sp-desc">PC 48px · 모바일 9.3vw</div>
+      </div>
+      <div class="sp-visual">
+        <div class="sp-box" style="height:48px"><span class="sp-box-label">48px</span><span class="sp-box-sub">PC</span></div>
+        <div class="sp-box" style="height:24px;opacity:.4"><span class="sp-box-label">9.3vw</span><span class="sp-box-sub">mobile</span></div>
+      </div>
+    </div>
+    <div class="sp-item">
+      <div class="sp-meta">
+        <div class="sp-var">--one-space-safe</div>
+        <div class="sp-fixed">16px 고정 — 반응형 변경 금지</div>
+        <div class="sp-desc">섹션 좌우 안전 패딩</div>
+      </div>
+      <div class="sp-visual">
+        <div class="sp-box fixed" style="height:16px"><span class="sp-box-label">16px</span><span class="sp-box-sub">고정</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAP: 가로 방향 실제 간격 시각화 -->
+  <div class="space-group">
+    <p class="space-group-title">요소 간 간격 — gap</p>
+
+    <div class="gap-item">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center">
+        <div><div class="sp-var">--one-gap-xl</div><div class="sp-desc">PC 32px · 태블릿 24px · 모바일 4.7vw</div></div>
+        <div class="gap-visual">
+          <div class="gap-block"></div>
+          <div class="gap-spacer" style="width:32px"><span class="gap-spacer-label">32px</span></div>
+          <div class="gap-block"></div>
+          <div class="gap-spacer" style="width:24px;opacity:.6"><span class="gap-spacer-label">24</span></div>
+          <div class="gap-block" style="opacity:.4"></div>
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-label">그레이 · 텍스트</div>
-      <div class="swatch-grid">
-        <div class="swatch">
-          <div class="swatch-color" style="background:#b0b0b0;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">그레이 1</div>
-            <div class="swatch-var">--gray-color01</div>
-            <div class="swatch-hex">#b0b0b0</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#a2a3a3;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">그레이 2</div>
-            <div class="swatch-var">--gray-color02</div>
-            <div class="swatch-hex">#a2a3a3</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#f2f2f2; border: 1px solid #e4e8ef;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">화이트</div>
-            <div class="swatch-var">--white-color</div>
-            <div class="swatch-hex">#f2f2f2</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#333333;"></div>
-          <div class="swatch-info">
-            <div class="swatch-name">기본 텍스트</div>
-            <div class="swatch-var">--one-txt-color</div>
-            <div class="swatch-hex">#333333</div>
-          </div>
+    <div class="gap-item">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center">
+        <div><div class="sp-var">--one-gap-lg</div><div class="sp-desc">PC 24px · 태블릿 16px · 모바일 3.7vw</div></div>
+        <div class="gap-visual">
+          <div class="gap-block"></div>
+          <div class="gap-spacer" style="width:24px"><span class="gap-spacer-label">24px</span></div>
+          <div class="gap-block"></div>
+          <div class="gap-spacer" style="width:16px;opacity:.6"><span class="gap-spacer-label">16</span></div>
+          <div class="gap-block" style="opacity:.4"></div>
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-label">색상 유틸리티 클래스</div>
-      <div style="font-size:12px;color:#888;margin-bottom:12px;">각 계열의 첫 번째(01)는 번호를 생략합니다.</div>
-      <div class="tag-row">
-        <span class="tag" style="color:#003c72;">.m-color</span>
-        <span class="tag" style="color:#809eb9;">.sb-color</span>
-        <span class="tag" style="color:#809eb9;">.sb02-color</span>
-        <span class="tag" style="color:#809eb9;">.sb03-color</span>
-        <span class="tag" style="color:#b8870a;">.sb04-color</span>
-        <span class="tag" style="color:#b0b0b0;">.gray-color</span>
-        <span class="tag" style="color:#a2a3a3;">.gray-color02</span>
-        <span class="tag" style="color:#aaa;">.w-color</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 타이포그래피 -->
-  <section id="typography">
-    <h2 class="sec-title">타이포그래피 · Typography</h2>
-
-    <div class="card">
-      <div class="card-label">타입 스케일 — 모든 클래스는 <code>.txt-wrap</code> 하위에서만 사용</div>
-      <div class="typo-row">
-        <div class="typo-meta">
-          <span class="typo-class">.hd1</span>
-          <div class="typo-detail">48px / 700 / lh 1.6</div>
-        </div>
-        <div class="typo-preview" style="font-size:48px;font-weight:700;line-height:1.2;color:#003c72;">Heading 1</div>
-      </div>
-      <div class="typo-row">
-        <div class="typo-meta">
-          <span class="typo-class">.hd2</span>
-          <div class="typo-detail">40px / 600 / lh 1.6</div>
-        </div>
-        <div class="typo-preview" style="font-size:40px;font-weight:600;line-height:1.2;color:#003c72;">Heading 2</div>
-      </div>
-      <div class="typo-row">
-        <div class="typo-meta">
-          <span class="typo-class">.hd3</span>
-          <div class="typo-detail">32px / 500 / lh 1.6</div>
-        </div>
-        <div class="typo-preview" style="font-size:32px;font-weight:500;line-height:1.2;">Heading 3</div>
-      </div>
-      <div class="typo-row">
-        <div class="typo-meta">
-          <span class="typo-class">.p-tit</span>
-          <div class="typo-detail">24px / 500 / lh 1.6</div>
-        </div>
-        <div class="typo-preview" style="font-size:24px;font-weight:500;">단락 제목 Paragraph Title</div>
-      </div>
-      <div class="typo-row">
-        <div class="typo-meta">
-          <span class="typo-class">.ft-body</span>
-          <div class="typo-detail">18px / 400 / lh 1.6</div>
-        </div>
-        <div class="typo-preview" style="font-size:18px;font-weight:400;">본문 텍스트입니다. Body text goes here.</div>
-      </div>
-      <div class="typo-row">
-        <div class="typo-meta">
-          <span class="typo-class">.cp-txt</span>
-          <div class="typo-detail">15px / 400 / lh 1.6</div>
-        </div>
-        <div class="typo-preview" style="font-size:15px;font-weight:400;color:#888;">캡션 · 보조 텍스트 Caption text</div>
-      </div>
-      <div class="typo-row">
-        <div class="typo-meta">
-          <span class="typo-class">.txt-help</span>
-          <div class="typo-detail">15px / --caption / gray<br>단독 사용 가능</div>
-        </div>
-        <div class="typo-preview" style="font-size:15px;color:#b0b0b0;">도움말·보조 안내 텍스트</div>
-      </div>
-    </div>
-
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-label">줄간격 · Line Height</div>
-        <div style="display:flex;gap:16px;margin-top:4px;">
-          <div style="flex:1;padding:12px;background:var(--sub02);border-radius:8px;">
-            <div style="font-size:11px;font-family:monospace;color:var(--main);margin-bottom:6px;">기본 (1.6)</div>
-            <div style="font-size:14px;line-height:1.6;color:#555;">모든 요소의<br>기본 줄간격입니다.</div>
-          </div>
-          <div style="flex:1;padding:12px;background:var(--sub02);border-radius:8px;">
-            <div style="font-size:11px;font-family:monospace;color:var(--main);margin-bottom:6px;">.lh-lg (1.3)</div>
-            <div style="font-size:14px;line-height:1.3;color:#555;">필요한 요소에만<br>클래스를 추가합니다.</div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-label">폰트 굵기 · Weight</div>
-        <div style="margin-top:4px;display:flex;flex-direction:column;gap:6px;">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <code>.ft-b</code>
-            <span style="font-weight:700;font-size:15px;">Bold — 700</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <code>.ft-sb</code>
-            <span style="font-weight:600;font-size:15px;">Semibold — 600</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <code>.ft-r</code>
-            <span style="font-weight:400;font-size:15px;">Regular — 400</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <code>.ft-l</code>
-            <span style="font-weight:300;font-size:15px;">Light — 300</span>
-          </div>
+    <div class="gap-item">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center">
+        <div><div class="sp-var">--one-gap-r</div><div class="sp-desc">PC 16px · 모바일 3.2vw</div></div>
+        <div class="gap-visual">
+          <div class="gap-block"></div>
+          <div class="gap-spacer" style="width:16px"><span class="gap-spacer-label">16px</span></div>
+          <div class="gap-block"></div>
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-label">텍스트 정렬 · 꾸밈</div>
-      <div class="tag-row">
-        <span class="tag">.txt-lf</span>
-        <span class="tag">.txt-ct</span>
-        <span class="tag">.txt-rg</span>
-        <span class="tag">.txt-ul</span>
-        <span class="tag">.txt-uc</span>
-        <span class="tag">.sub-ft</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 여백 -->
-  <section id="spacing">
-    <h2 class="sec-title">여백 · Spacing</h2>
-
-    <div class="card">
-      <div class="card-label">섹션·컨테이너 간 여백 — <code>space</code></div>
-      <div style="margin-top:8px;">
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-space-xl</div>
-            <div class="space-desc">PC 120px / 태블릿 100px / 모바일 15vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:100%;"><span>120px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-space-lg</div>
-            <div class="space-desc">PC 100px / 태블릿 80px / 모바일 12.5vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:83%;"><span>100px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-space-r</div>
-            <div class="space-desc">PC 80px / 태블릿 54px / 모바일 11vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:66%;"><span>80px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-space-s</div>
-            <div class="space-desc">PC 48px / 모바일 9.3vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:40%;"><span>48px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-space-safe</div>
-            <div class="space-desc" style="color:#1a7a40;font-weight:600;">16px 고정 — 반응형 변경 금지</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:13%;background:#e6f7ee;border-color:#1a7a40;"><span style="color:#1a7a40;">16px</span></div></div>
+    <div class="gap-item">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center">
+        <div><div class="sp-var">--one-gap-sm</div><div class="sp-desc">PC 8px · 모바일 2.5vw</div></div>
+        <div class="gap-visual">
+          <div class="gap-block"></div>
+          <div class="gap-spacer" style="width:8px"><span class="gap-spacer-label">8</span></div>
+          <div class="gap-block"></div>
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-label">요소 간 간격 — <code>gap</code></div>
-      <div style="margin-top:8px;">
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-gap-xl</div>
-            <div class="space-desc">PC 32px / 태블릿 24px / 모바일 4.7vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:100%;"><span>32px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-gap-lg</div>
-            <div class="space-desc">PC 24px / 태블릿 16px / 모바일 3.7vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:75%;"><span>24px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-gap-r</div>
-            <div class="space-desc">PC 16px / 모바일 3.2vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:50%;"><span>16px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-gap-sm</div>
-            <div class="space-desc">PC 8px / 모바일 2.5vw</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:25%;"><span>8px</span></div></div>
-        </div>
-        <div class="space-row">
-          <div class="space-meta">
-            <div class="space-var">--one-gap-xs</div>
-            <div class="space-desc" style="color:#1a7a40;font-weight:600;">4px 고정 — 반응형 변경 금지</div>
-          </div>
-          <div class="space-bar-wrap"><div class="space-bar" style="width:13%;background:#e6f7ee;border-color:#1a7a40;"><span style="color:#1a7a40;">4px</span></div></div>
+    <div class="gap-item">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center">
+        <div><div class="sp-var">--one-gap-xs</div><div class="sp-fixed">4px 고정 — 반응형 변경 금지</div><div class="sp-desc">리스트 항목 하단 여백 등</div></div>
+        <div class="gap-visual">
+          <div class="gap-block"></div>
+          <div class="gap-spacer fixed" style="width:4px"><span class="gap-spacer-label"></span></div>
+          <div class="gap-block"></div>
+          <div style="font-size:10px;color:#1a7a40;margin-left:8px;white-space:nowrap;align-self:center">4px</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 아이콘 -->
-  <section id="icons">
-    <h2 class="sec-title">아이콘 크기 · Icon Size</h2>
-    <div class="card">
-      <div class="card-label">width 기준 4단계. height: auto (비율 유지)</div>
-      <div class="icon-grid" style="margin-top:12px;">
-        <div class="icon-card">
-          <div class="icon-box" style="width:40px;height:40px;">
-            <div class="dot" style="width:16px;height:16px;border-radius:3px;"></div>
-          </div>
-          <div><span class="icon-class">.icon-s</span></div>
-          <div class="icon-size">16px</div>
-          <div class="icon-use">인라인 텍스트 옆<br>뱃지 내부</div>
-        </div>
-        <div class="icon-card">
-          <div class="icon-box" style="width:48px;height:48px;">
-            <div class="dot" style="width:20px;height:20px;border-radius:4px;"></div>
-          </div>
-          <div><span class="icon-class">.icon-r</span></div>
-          <div class="icon-size">20px</div>
-          <div class="icon-use">버튼·입력 필드<br>기본 아이콘</div>
-        </div>
-        <div class="icon-card">
-          <div class="icon-box" style="width:52px;height:52px;">
-            <div class="dot" style="width:24px;height:24px;border-radius:4px;"></div>
-          </div>
-          <div><span class="icon-class">.icon-l</span></div>
-          <div class="icon-size">24px</div>
-          <div class="icon-use">카드·리스트<br>툴바 아이콘</div>
-        </div>
-        <div class="icon-card">
-          <div class="icon-box" style="width:60px;height:60px;">
-            <div class="dot" style="width:32px;height:32px;border-radius:5px;"></div>
-          </div>
-          <div><span class="icon-class">.icon-xl</span></div>
-          <div class="icon-size">32px</div>
-          <div class="icon-use">섹션 포인트<br>빈 상태(Empty)</div>
+<!-- ── 아이콘 ── -->
+<section class="sec" id="icons">
+  <p class="sec-eyebrow">Icon Size — 아이콘 크기</p>
+  <p style="font-size:11px;color:#bbb;margin-bottom:24px;">width 기준 4단계. height: auto (비율 유지). flex-shrink: 0 기본 적용.</p>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon-preview" style="width:48px;height:48px"><div class="icon-dot" style="width:16px;height:16px"></div></div>
+      <div class="icon-info"><div class="icon-class">.icon-s</div><div class="icon-px">16px</div><div class="icon-use">인라인 텍스트 옆<br>뱃지 내부</div></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-preview" style="width:52px;height:52px"><div class="icon-dot" style="width:20px;height:20px"></div></div>
+      <div class="icon-info"><div class="icon-class">.icon-r</div><div class="icon-px">20px</div><div class="icon-use">버튼·입력 필드<br>기본 아이콘</div></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-preview" style="width:56px;height:56px"><div class="icon-dot" style="width:24px;height:24px"></div></div>
+      <div class="icon-info"><div class="icon-class">.icon-l</div><div class="icon-px">24px</div><div class="icon-use">카드·리스트<br>툴바 아이콘</div></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-preview" style="width:64px;height:64px"><div class="icon-dot" style="width:32px;height:32px"></div></div>
+      <div class="icon-info"><div class="icon-class">.icon-xl</div><div class="icon-px">32px</div><div class="icon-use">섹션 포인트<br>빈 상태(Empty)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 레이아웃 ── -->
+<section class="sec" id="layout">
+  <p class="sec-eyebrow">Layout — 레이아웃 구조</p>
+
+  <div class="layout-diagram">
+    <div class="ld-layer" style="border:1.5px dashed #ccc">
+      <div class="ld-label"><div class="ld-dot" style="background:#ccc"></div><span style="color:#999;font-family:monospace;font-size:11px">.wrap-max — max-width 1920px</span></div>
+      <div class="ld-layer" style="border:1.5px dashed #809eb9;margin-top:4px">
+        <div class="ld-label"><div class="ld-dot" style="background:#809eb9"></div><span style="color:#809eb9;font-family:monospace;font-size:11px">.section — padding: 0 16px (좌우 safe 필수)</span></div>
+        <div class="ld-layer" style="border:1.5px dashed #003c72;margin-top:4px;max-width:75%;margin-left:auto;margin-right:auto">
+          <div class="ld-label"><div class="ld-dot" style="background:#003c72"></div><span style="color:#003c72;font-family:monospace;font-size:11px">.con-inner — max 1200px / padding: 100px 0</span></div>
+          <div class="ld-content">콘텐츠 영역 — 상하 여백만, 좌우 패딩 없음</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- 레이아웃 -->
-  <section id="layout">
-    <h2 class="sec-title">레이아웃 구조 · Layout</h2>
+  <table class="layout-table" style="margin-top:20px">
+    <thead><tr><th>클래스</th><th>padding</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td class="cls">.wrap-max</td><td class="pad">—</td><td><span class="role">화면 최대 너비 1920px 제한</span></td></tr>
+      <tr><td class="cls">.section</td><td class="pad">0 var(--one-space-safe)</td><td><span class="role">섹션 래퍼</span><div class="warn">좌우 safe 패딩 필수</div></td></tr>
+      <tr><td class="cls">.x-sf</td><td class="pad">0 var(--one-space-safe)</td><td><span class="role">section 없이 safe 패딩만 필요할 때</span></td></tr>
+      <tr><td class="cls">.con-inner</td><td class="pad">var(--one-space-lg) 0</td><td><span class="role">기본 콘텐츠 컨테이너 1200px</span><div class="warn">좌우 패딩 추가 금지</div></td></tr>
+      <tr><td class="cls">.con-inner-lg</td><td class="pad">var(--one-space-lg) 0</td><td><span class="role">와이드 콘텐츠 컨테이너 1680px</span></td></tr>
+    </tbody>
+  </table>
+</section>
 
-    <div class="layout-diagram">
-      <div class="layout-layer" style="border-color:#b0b0b0;max-width:100%;">
-        <span class="layout-layer-label" style="color:#b0b0b0;">.wrap-max — max 1920px</span>
-        <div class="layout-layer" style="border-color:var(--sub03);margin-top:8px;">
-          <span class="layout-layer-label" style="color:var(--sub03);">.section — 좌우 safe 16px</span>
-          <div class="layout-layer" style="border-color:var(--main);margin-top:8px;max-width:80%;margin-left:auto;margin-right:auto;">
-            <span class="layout-layer-label" style="color:var(--main);">.con-inner — max 1200px · 상하 여백만</span>
-            <div class="layout-content">콘텐츠 영역</div>
-          </div>
-        </div>
+<!-- ── 반응형 ── -->
+<section class="sec" id="breakpoints">
+  <p class="sec-eyebrow">Responsive — 반응형</p>
+
+  <div class="bp-row">
+    <div class="bp-card" style="border-left:3px solid #003c72">
+      <div class="bp-label">PC</div>
+      <div class="bp-range" style="color:#003c72">1025px+</div>
+      <div class="bp-cond">기본값 · 쿼리 없음</div>
+      <div class="bp-note">px 단위 고정</div>
+    </div>
+    <div class="bp-card" style="border-left:3px solid #809eb9">
+      <div class="bp-label">태블릿</div>
+      <div class="bp-range" style="color:#809eb9">≤ 1024px</div>
+      <div class="bp-cond">max-width: 1024px</div>
+      <div class="bp-note">px 단위 재정의</div>
+    </div>
+    <div class="bp-card" style="border-left:3px solid #e6b800">
+      <div class="bp-label">모바일</div>
+      <div class="bp-range" style="color:#b8870a">≤ 639px</div>
+      <div class="bp-cond">max-width: 639px</div>
+      <div class="bp-note">타이포·여백 → vw 단위</div>
+    </div>
+  </div>
+
+  <p class="sec-sub">타이포그래피 전환값</p>
+  <table class="bp-table">
+    <thead><tr><th>변수</th><th>PC</th><th style="color:#809eb9">태블릿</th><th style="color:#b8870a">모바일</th></tr></thead>
+    <tbody>
+      <tr><td class="var">--one-hd1</td><td class="pc">48px</td><td class="tab">46px</td><td class="mo">8.2vw</td></tr>
+      <tr><td class="var">--one-hd2</td><td class="pc">40px</td><td class="tab">38px</td><td class="mo">7vw</td></tr>
+      <tr><td class="var">--one-hd3</td><td class="pc">32px</td><td class="tab">30px</td><td class="mo">6vw</td></tr>
+      <tr><td class="var">--one-p-tit</td><td class="pc">24px</td><td class="tab">20px</td><td class="mo">5vw</td></tr>
+      <tr><td class="var">--one-body</td><td class="pc">18px</td><td class="tab">16px</td><td class="mo">3.7vw</td></tr>
+      <tr><td class="var">--one-caption</td><td class="pc">15px</td><td class="tab">13px</td><td class="mo">2.7vw</td></tr>
+    </tbody>
+  </table>
+
+  <p class="sec-sub">여백 전환값 — space</p>
+  <table class="bp-table">
+    <thead><tr><th>변수</th><th>PC</th><th style="color:#809eb9">태블릿</th><th style="color:#b8870a">모바일</th></tr></thead>
+    <tbody>
+      <tr><td class="var">--one-space-xl</td><td class="pc">120px</td><td class="tab">100px</td><td class="mo">15vw</td></tr>
+      <tr><td class="var">--one-space-lg</td><td class="pc">100px</td><td class="tab">80px</td><td class="mo">12.5vw</td></tr>
+      <tr><td class="var">--one-space-r</td><td class="pc">80px</td><td class="tab">54px</td><td class="mo">11vw</td></tr>
+      <tr><td class="var">--one-space-s</td><td class="pc">48px</td><td class="tab" style="color:#ccc">—</td><td class="mo">9.3vw</td></tr>
+      <tr class="fixed-row"><td class="var" style="color:#1a7a40">--one-space-safe</td><td class="fix">16px</td><td class="fix">16px</td><td class="fix">16px 고정</td></tr>
+    </tbody>
+  </table>
+
+  <p class="sec-sub">요소 간격 전환값 — gap</p>
+  <table class="bp-table">
+    <thead><tr><th>변수</th><th>PC</th><th style="color:#809eb9">태블릿</th><th style="color:#b8870a">모바일</th></tr></thead>
+    <tbody>
+      <tr><td class="var">--one-gap-xl</td><td class="pc">32px</td><td class="tab">24px</td><td class="mo">4.7vw</td></tr>
+      <tr><td class="var">--one-gap-lg</td><td class="pc">24px</td><td class="tab">16px</td><td class="mo">3.7vw</td></tr>
+      <tr><td class="var">--one-gap-r</td><td class="pc">16px</td><td class="tab" style="color:#ccc">—</td><td class="mo">3.2vw</td></tr>
+      <tr><td class="var">--one-gap-sm</td><td class="pc">8px</td><td class="tab" style="color:#ccc">—</td><td class="mo">2.5vw</td></tr>
+      <tr class="fixed-row"><td class="var" style="color:#1a7a40">--one-gap-xs</td><td class="fix">4px</td><td class="fix">4px</td><td class="fix">4px 고정</td></tr>
+    </tbody>
+  </table>
+
+  <p class="sec-sub">반응형 가시성 클래스</p>
+  <table class="vis-table">
+    <thead><tr><th>클래스</th><th>PC</th><th>태블릿</th><th>모바일</th></tr></thead>
+    <tbody>
+      <tr><td class="vis-cls">.show-mo</td><td><span class="vis-off">none</span></td><td><span class="vis-on">block</span></td><td><span class="vis-on">block</span></td></tr>
+      <tr><td class="vis-cls">.show-mo-i</td><td><span class="vis-off">none</span></td><td><span class="vis-on">inline-block</span></td><td><span class="vis-on">inline-block</span></td></tr>
+      <tr><td class="vis-cls">.only-mo</td><td><span class="vis-off">none</span></td><td><span class="vis-off">none</span></td><td><span class="vis-on">block</span></td></tr>
+      <tr><td class="vis-cls">.hide-mo</td><td><span class="vis-on">표시</span></td><td><span class="vis-on">표시</span></td><td><span class="vis-off">none</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ── 공통 클래스 ── -->
+<section class="sec" id="classes">
+  <p class="sec-eyebrow">Common Classes — 공통 클래스</p>
+
+  <p class="sec-sub">사용 원칙</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:8px;overflow:hidden;margin-bottom:24px">
+    <div style="background:#fafafa;padding:16px 18px;font-size:11px;color:#555;line-height:1.7"><b style="display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#bbb;margin-bottom:6px">단일 역할</b>공통 클래스 하나는 하나의 역할만 수행합니다.</div>
+    <div style="background:#fafafa;padding:16px 18px;font-size:11px;color:#555;line-height:1.7"><b style="display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#bbb;margin-bottom:6px">덮어쓰기 방향</b>컴포넌트 클래스에서 정의 후 공통 클래스 위에 덮어씁니다.</div>
+    <div style="background:#fafafa;padding:16px 18px;font-size:11px;color:#555;line-height:1.7"><b style="display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#bbb;margin-bottom:6px">.txt-wrap 스코프</b>.hd1~.cp-txt 타입 클래스는 반드시 .txt-wrap 하위에서만 사용합니다.</div>
+    <div style="background:#fafafa;padding:16px 18px;font-size:11px;color:#555;line-height:1.7"><b style="display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#bbb;margin-bottom:6px">신규 추가</b>팀 리더 승인 후 가이드와 CSS에 동시 반영합니다.</div>
+  </div>
+
+  <p class="sec-sub">레이아웃 유틸리티</p>
+  <div style="display:flex;flex-wrap:wrap;gap:6px">
+    <span class="pill">.wrap-max</span><span class="pill">.section</span><span class="pill">.x-sf</span>
+    <span class="pill">.con-inner</span><span class="pill">.con-inner-lg</span>
+    <span class="pill">.f-row</span><span class="pill">.f-col</span><span class="pill">.img-box</span>
+    <span class="pill">.bg-cv</span><span class="pill">.bg-ct</span>
+  </div>
+
+  <p class="sec-sub">여백 초기화</p>
+  <div style="display:flex;flex-wrap:wrap;gap:6px">
+    <span class="pill">.pdt-0</span><span class="pill">.pdb-0</span>
+    <span class="pill">.mgt-0</span><span class="pill">.mgb-0</span>
+    <span class="pill">.sp</span>
+  </div>
+
+  <p class="sec-sub">리스트 스타일</p>
+  <div class="ui-row">
+    <div class="ui-card">
+      <div class="ui-card-label">.lst-dot</div>
+      <div class="list-preview">
+        <div class="mock-lst-sub">소제목 (lst-sub)</div>
+        <div class="mock-lst-item"><span class="mock-dot"></span>항목 1</div>
+        <div class="mock-lst-item"><span class="mock-dot"></span>항목 2</div>
+        <div class="mock-lst-item"><span class="mock-dot"></span>항목 3</div>
+      </div>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px">
+        <span class="pill" style="font-size:10px">.lst-dot</span>
+        <span class="pill" style="font-size:10px">.lst-sub</span>
+        <span class="pill" style="font-size:10px">.space</span>
       </div>
     </div>
-
-    <div class="grid-3" style="margin-top:12px;">
-      <div class="card">
-        <div class="card-label">wrap-max</div>
-        <code style="font-size:11px;">max-width: 1920px</code>
-        <div style="font-size:12px;color:#888;margin-top:6px;">화면 최대 너비 제한</div>
+    <div class="ui-card">
+      <div class="ui-card-label">.lst-dash</div>
+      <div class="list-preview">
+        <div class="mock-lst-sub">소제목 (lst-sub)</div>
+        <div class="mock-lst-item"><span class="mock-dash"></span>항목 1</div>
+        <div class="mock-lst-item"><span class="mock-dash"></span>항목 2</div>
+        <div class="mock-lst-item mock-no-dash">기호 없는 항목 (no-dash)</div>
       </div>
-      <div class="card">
-        <div class="card-label">section</div>
-        <code style="font-size:11px;">padding: 0 16px</code>
-        <div style="font-size:12px;color:#e03;margin-top:6px;font-weight:600;">좌우 safe 패딩 필수</div>
-      </div>
-      <div class="card">
-        <div class="card-label">con-inner</div>
-        <code style="font-size:11px;">padding: 100px 0</code>
-        <div style="font-size:12px;color:#888;margin-top:6px;">상하 여백만 · 좌우 없음</div>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px">
+        <span class="pill" style="font-size:10px">.lst-dash</span>
+        <span class="pill" style="font-size:10px">.lst-sub</span>
+        <span class="pill" style="font-size:10px">.no-dash</span>
       </div>
     </div>
+  </div>
 
-    <div class="card" style="margin-top:0;">
-      <div class="card-label">레이아웃 변수</div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
-        <div style="padding:10px 16px;background:var(--sub02);border-radius:8px;text-align:center;">
-          <div style="font-family:monospace;font-size:11px;color:var(--main);margin-bottom:2px;">--one-layout</div>
-          <div style="font-size:13px;font-weight:600;">1200px</div>
-          <div style="font-size:11px;color:#aaa;">.con-inner</div>
-        </div>
-        <div style="padding:10px 16px;background:var(--sub02);border-radius:8px;text-align:center;">
-          <div style="font-family:monospace;font-size:11px;color:var(--main);margin-bottom:2px;">--one-layout-lg</div>
-          <div style="font-size:13px;font-weight:600;">1680px</div>
-          <div style="font-size:11px;color:#aaa;">.con-inner-lg</div>
-        </div>
-        <div style="padding:10px 16px;background:var(--sub02);border-radius:8px;text-align:center;">
-          <div style="font-family:monospace;font-size:11px;color:var(--main);margin-bottom:2px;">--one-outer-layout</div>
-          <div style="font-size:13px;font-weight:600;">1920px</div>
-          <div style="font-size:11px;color:#aaa;">.wrap-max</div>
-        </div>
+  <p class="sec-sub">UI 컴포넌트</p>
+  <div class="ui-row">
+    <div class="ui-card">
+      <div class="ui-card-label">.sec-hd — 섹션 헤딩</div>
+      <div style="padding-bottom:20px;border-bottom:1px solid #f0f0f0">
+        <p style="font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:#809eb9;margin-bottom:6px">SECTION</p>
+        <h2 style="font-size:24px;font-weight:600;color:#003c72;line-height:1.2">섹션 제목</h2>
       </div>
+      <div style="font-size:10px;color:#ccc;margin-top:10px">반드시 .txt-wrap 과 함께 사용</div>
     </div>
-  </section>
-
-  <!-- 반응형 -->
-  <section id="breakpoints">
-    <h2 class="sec-title">반응형 브레이크포인트 · Breakpoints</h2>
-
-    <div class="grid-3">
-      <div class="card" style="border-top:3px solid var(--main);">
-        <div style="font-size:11px;color:var(--sub03);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">PC</div>
-        <div style="font-size:20px;font-weight:700;color:var(--main);margin-bottom:4px;">1025px 이상</div>
-        <div style="font-size:12px;color:#888;">기본값 — 쿼리 없음</div>
-        <div style="font-size:11px;color:var(--gray01);margin-top:8px;">px 단위 고정</div>
+    <div class="ui-card">
+      <div class="ui-card-label">.badge</div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <span style="background:#003c72;font-size:0.65em;padding:2px 10px 3px;font-weight:700;border-radius:4px;color:#fff;line-height:1.5">NEW</span>
+        <span style="font-size:20px;font-weight:600;color:#111">공지사항 <span style="background:#003c72;font-size:0.65em;padding:2px 10px 3px;font-weight:700;border-radius:4px;color:#fff;line-height:1.5;vertical-align:middle">NEW</span></span>
       </div>
-      <div class="card" style="border-top:3px solid var(--sub03);">
-        <div style="font-size:11px;color:var(--sub03);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">태블릿</div>
-        <div style="font-size:20px;font-weight:700;color:var(--sub03);margin-bottom:4px;">640 ~ 1024px</div>
-        <div style="font-size:12px;color:#888;">max-width: 1024px</div>
-        <div style="font-size:11px;color:var(--gray01);margin-top:8px;">px 단위 재정의</div>
-      </div>
-      <div class="card" style="border-top:3px solid #e6b800;">
-        <div style="font-size:11px;color:#b8870a;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">모바일</div>
-        <div style="font-size:20px;font-weight:700;color:#b8870a;margin-bottom:4px;">639px 이하</div>
-        <div style="font-size:12px;color:#888;">max-width: 639px</div>
-        <div style="font-size:11px;color:var(--gray01);margin-top:8px;">타이포·여백 → vw 전환</div>
-      </div>
+      <div style="font-size:10px;color:#ccc">line-height: 1.5 — lh 변수 체계 예외값</div>
     </div>
+  </div>
+</section>
 
-    <div class="card" style="margin-top:0;">
-      <div class="card-label">고정값 — 반응형에서 절대 변경 금지</div>
-      <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
-        <div style="padding:10px 16px;background:#e6f7ee;border-radius:8px;border:1px solid #b7e2c8;">
-          <code style="background:transparent;color:#1a7a40;font-size:12px;">--one-space-safe</code>
-          <div style="font-size:13px;font-weight:700;color:#1a7a40;margin-top:2px;">16px 고정</div>
-        </div>
-        <div style="padding:10px 16px;background:#e6f7ee;border-radius:8px;border:1px solid #b7e2c8;">
-          <code style="background:transparent;color:#1a7a40;font-size:12px;">--one-gap-xs</code>
-          <div style="font-size:13px;font-weight:700;color:#1a7a40;margin-top:2px;">4px 고정</div>
-        </div>
-      </div>
-    </div>
+<!-- ── 네이밍 컨벤션 ── -->
+<section class="sec" id="naming">
+  <p class="sec-eyebrow">Naming Convention — 네이밍 컨벤션</p>
 
-    <!-- 타이포그래피 반응형 -->
-    <div class="card">
-      <div class="card-label">타이포그래피 변수 반응형 전환값</div>
-      <div style="overflow-x:auto;margin-top:12px;">
-        <table style="width:100%;border-collapse:collapse;font-size:12px;">
-          <thead>
-            <tr style="background:var(--sub02);">
-              <th style="text-align:left;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);white-space:nowrap;">변수</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);">PC</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--sub03);border-bottom:1px solid var(--border);">태블릿</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:#b8870a;border-bottom:1px solid var(--border);">모바일</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-hd1</td>
-              <td style="padding:8px 12px;text-align:center;">48px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">46px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">8.2vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);background:#fafbfc;">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-hd2</td>
-              <td style="padding:8px 12px;text-align:center;">40px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">38px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">7vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-hd3</td>
-              <td style="padding:8px 12px;text-align:center;">32px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">30px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">6vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);background:#fafbfc;">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-p-tit</td>
-              <td style="padding:8px 12px;text-align:center;">24px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">20px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">5vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-body</td>
-              <td style="padding:8px 12px;text-align:center;">18px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">16px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">3.7vw</td>
-            </tr>
-            <tr>
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-caption</td>
-              <td style="padding:8px 12px;text-align:center;">15px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">13px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">2.7vw</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div style="margin-top:10px;font-size:11px;color:#aaa;">--one-lh-r / --one-lh-lg 는 모든 구간 동일하게 유지 (1.6 / 1.3)</div>
-    </div>
+  <p class="sec-sub">변수</p>
+  <div class="naming-box">--<span class="hl">one</span>-{category}-{variant}</div>
+  <table class="naming-table">
+    <thead><tr><th>파트</th><th>규칙</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td class="col1">prefix</td><td class="col2">one- 로 시작 (색상 변수 제외)</td><td class="col3">--one-</td></tr>
+      <tr><td class="col1">category</td><td class="col2">역할 단어</td><td class="col3">space gap icon hd lh</td></tr>
+      <tr><td class="col1">variant</td><td class="col2">크기·번호</td><td class="col3">xs sm r s lg xl safe 01~04</td></tr>
+      <tr><td class="col1">구분자</td><td class="col2">- 대시만 허용</td><td class="col3">--one-gap-xs ✓</td></tr>
+    </tbody>
+  </table>
 
-    <!-- 여백 반응형 -->
-    <div class="card">
-      <div class="card-label">섹션·컨테이너 여백 (space) 반응형 전환값</div>
-      <div style="overflow-x:auto;margin-top:12px;">
-        <table style="width:100%;border-collapse:collapse;font-size:12px;">
-          <thead>
-            <tr style="background:var(--sub02);">
-              <th style="text-align:left;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);">변수</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);">PC</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--sub03);border-bottom:1px solid var(--border);">태블릿</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:#b8870a;border-bottom:1px solid var(--border);">모바일</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-space-xl</td>
-              <td style="padding:8px 12px;text-align:center;">120px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">100px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">15vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);background:#fafbfc;">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-space-lg</td>
-              <td style="padding:8px 12px;text-align:center;">100px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">80px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">12.5vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-space-r</td>
-              <td style="padding:8px 12px;text-align:center;">80px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">54px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">11vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);background:#fafbfc;">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-space-s</td>
-              <td style="padding:8px 12px;text-align:center;">48px</td>
-              <td style="padding:8px 12px;text-align:center;color:#ccc;">—</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">9.3vw</td>
-            </tr>
-            <tr style="background:#e6f7ee;">
-              <td style="padding:8px 12px;font-family:monospace;color:#1a7a40;">--one-space-safe</td>
-              <td style="padding:8px 12px;text-align:center;font-weight:700;color:#1a7a40;">16px</td>
-              <td style="padding:8px 12px;text-align:center;font-weight:700;color:#1a7a40;">16px</td>
-              <td style="padding:8px 12px;text-align:center;font-weight:700;color:#1a7a40;">16px 고정</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <p class="sec-sub">클래스</p>
+  <div class="naming-box">{<span class="hl">prefix</span>}-{block}-{element} + .is-{state}</div>
+  <table class="naming-table">
+    <thead><tr><th>유형</th><th>패턴</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td class="col1">레이아웃</td><td class="col2">역할 약어</td><td class="col3">.wrap-max .con-inner .f-row</td></tr>
+      <tr><td class="col1">타입 스케일</td><td class="col2">크기명</td><td class="col3">.hd1 .p-tit .ft-body .cp-txt</td></tr>
+      <tr><td class="col1">텍스트 유틸</td><td class="col2">txt-{role}</td><td class="col3">.txt-lf .txt-ul .txt-help</td></tr>
+      <tr><td class="col1">색상</td><td class="col2">{initial}-color</td><td class="col3">.m-color .sb02-color</td></tr>
+      <tr><td class="col1">아이콘</td><td class="col2">icon-{size}</td><td class="col3">.icon-r .icon-xl</td></tr>
+      <tr><td class="col1">여백 초기화</td><td class="col2">{pd/mg}{t/b}-0</td><td class="col3">.pdt-0 .mgb-0</td></tr>
+      <tr><td class="col1">반응형</td><td class="col2">{show/hide/only}-mo</td><td class="col3">.show-mo .hide-mo</td></tr>
+      <tr><td class="col1">리스트</td><td class="col2">lst-{style}</td><td class="col3">.lst-dot .lst-dash</td></tr>
+    </tbody>
+  </table>
+</section>
 
-    <!-- gap 반응형 -->
-    <div class="card">
-      <div class="card-label">요소 간 간격 (gap) 반응형 전환값</div>
-      <div style="overflow-x:auto;margin-top:12px;">
-        <table style="width:100%;border-collapse:collapse;font-size:12px;">
-          <thead>
-            <tr style="background:var(--sub02);">
-              <th style="text-align:left;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);">변수</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);">PC</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--sub03);border-bottom:1px solid var(--border);">태블릿</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:#b8870a;border-bottom:1px solid var(--border);">모바일</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-gap-xl</td>
-              <td style="padding:8px 12px;text-align:center;">32px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">24px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">4.7vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);background:#fafbfc;">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-gap-lg</td>
-              <td style="padding:8px 12px;text-align:center;">24px</td>
-              <td style="padding:8px 12px;text-align:center;color:var(--sub03);">16px</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">3.7vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-gap-r</td>
-              <td style="padding:8px 12px;text-align:center;">16px</td>
-              <td style="padding:8px 12px;text-align:center;color:#ccc;">—</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">3.2vw</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);background:#fafbfc;">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">--one-gap-sm</td>
-              <td style="padding:8px 12px;text-align:center;">8px</td>
-              <td style="padding:8px 12px;text-align:center;color:#ccc;">—</td>
-              <td style="padding:8px 12px;text-align:center;color:#b8870a;">2.5vw</td>
-            </tr>
-            <tr style="background:#e6f7ee;">
-              <td style="padding:8px 12px;font-family:monospace;color:#1a7a40;">--one-gap-xs</td>
-              <td style="padding:8px 12px;text-align:center;font-weight:700;color:#1a7a40;">4px</td>
-              <td style="padding:8px 12px;text-align:center;font-weight:700;color:#1a7a40;">4px</td>
-              <td style="padding:8px 12px;text-align:center;font-weight:700;color:#1a7a40;">4px 고정</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<!-- ── 사용 금지 ── -->
+<section class="sec" id="rules">
+  <p class="sec-eyebrow">Restrictions — 사용 금지</p>
+  <div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>색상 하드코딩 — 변수 변경 시 누락 발생</span><span class="rule-alt">var(--main-color)</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>space 변수를 요소 간 gap에 사용 — 역할 혼용</span><span class="rule-alt">gap 변수 사용</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>gap 변수를 섹션 패딩에 사용 — 역할 혼용</span><span class="rule-alt">space 변수 사용</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>.con-inner 에 좌우 패딩 추가 — 구조 파괴</span><span class="rule-alt">.section 에서 처리</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>.section 좌우 safe 패딩 제거 — 필수 규칙 위반</span><span class="rule-alt">항상 유지</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>--one-space-safe 반응형 변경 — 16px 고정</span><span class="rule-alt">변경 금지</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>타입 클래스에 line-height 직접 선언</span><span class="rule-alt">.lh-lg 추가</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>.txt-wrap 없이 타입 클래스 사용 — 스코프 이탈</span><span class="rule-alt">.txt-wrap 하위에서만</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>미디어 쿼리 내 신규 변수 선언</span><span class="rule-alt">:root 에 선언 후 재정의</span></div>
+    <div class="rule-item"><span class="rule-txt"><span class="rule-x">✕</span>!important 남용 — 여백 초기화·.lh-lg 에만 허용</span><span class="rule-alt">필요 시 제한</span></div>
+  </div>
+</section>
 
-    <!-- 반응형 가시성 클래스 -->
-    <div class="card">
-      <div class="card-label">반응형 가시성 클래스</div>
-      <div style="overflow-x:auto;margin-top:12px;">
-        <table style="width:100%;border-collapse:collapse;font-size:12px;">
-          <thead>
-            <tr style="background:var(--sub02);">
-              <th style="text-align:left;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);">클래스</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--main);border-bottom:1px solid var(--border);">PC</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:var(--sub03);border-bottom:1px solid var(--border);">태블릿</th>
-              <th style="text-align:center;padding:8px 12px;font-weight:600;color:#b8870a;border-bottom:1px solid var(--border);">모바일</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">.show-mo</td>
-              <td style="padding:8px 12px;text-align:center;"><span style="color:#ccc;font-size:11px;">none</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="background:#003c7218;color:var(--main);font-size:11px;padding:2px 8px;border-radius:4px;">block</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="background:#003c7218;color:var(--main);font-size:11px;padding:2px 8px;border-radius:4px;">block</span></td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);background:#fafbfc;">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">.show-mo-i</td>
-              <td style="padding:8px 12px;text-align:center;"><span style="color:#ccc;font-size:11px;">none</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="background:#003c7218;color:var(--main);font-size:11px;padding:2px 8px;border-radius:4px;">inline-block</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="background:#003c7218;color:var(--main);font-size:11px;padding:2px 8px;border-radius:4px;">inline-block</span></td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border);">
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">.only-mo</td>
-              <td style="padding:8px 12px;text-align:center;"><span style="color:#ccc;font-size:11px;">none</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="color:#ccc;font-size:11px;">none</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="background:#003c7218;color:var(--main);font-size:11px;padding:2px 8px;border-radius:4px;">block</span></td>
-            </tr>
-            <tr>
-              <td style="padding:8px 12px;font-family:monospace;color:var(--main);">.hide-mo</td>
-              <td style="padding:8px 12px;text-align:center;"><span style="background:#003c7218;color:var(--main);font-size:11px;padding:2px 8px;border-radius:4px;">표시</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="background:#003c7218;color:var(--main);font-size:11px;padding:2px 8px;border-radius:4px;">표시</span></td>
-              <td style="padding:8px 12px;text-align:center;"><span style="color:#ccc;font-size:11px;">none</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- 리스트 -->
-  <section id="list">
-    <h2 class="sec-title">리스트 · List</h2>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-label">.lst-dot — 점 스타일</div>
-        <ul style="list-style:none;margin-top:12px;">
-          <li style="font-weight:700;font-size:14px;margin-bottom:4px;">소제목 (lst-sub)</li>
-          <li style="position:relative;padding-left:14px;font-size:14px;padding-bottom:4px;">
-            <span style="position:absolute;left:2px;top:0.6em;width:3px;height:3px;border-radius:50%;background:var(--txt);display:block;"></span>
-            항목 1
-          </li>
-          <li style="position:relative;padding-left:14px;font-size:14px;padding-bottom:4px;">
-            <span style="position:absolute;left:2px;top:0.6em;width:3px;height:3px;border-radius:50%;background:var(--txt);display:block;"></span>
-            항목 2
-          </li>
-        </ul>
-        <div class="tag-row" style="margin-top:12px;">
-          <span class="tag">.lst-dot</span>
-          <span class="tag">.lst-sub</span>
-          <span class="tag">.space</span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-label">.lst-dash — 대시 스타일</div>
-        <ul style="list-style:none;margin-top:12px;">
-          <li style="font-weight:700;font-size:14px;margin-bottom:4px;">소제목 (lst-sub)</li>
-          <li style="position:relative;padding-left:14px;font-size:14px;padding-bottom:4px;">
-            <span style="position:absolute;left:4px;top:0.65em;width:5px;height:1px;background:var(--txt);display:block;"></span>
-            항목 1
-          </li>
-          <li style="position:relative;padding-left:14px;font-size:14px;padding-bottom:4px;">
-            <span style="position:absolute;left:4px;top:0.65em;width:5px;height:1px;background:var(--txt);display:block;"></span>
-            항목 2
-          </li>
-          <li style="padding-left:4px;font-size:14px;color:#888;">기호 없는 항목 (no-dash)</li>
-        </ul>
-        <div class="tag-row" style="margin-top:12px;">
-          <span class="tag">.lst-dash</span>
-          <span class="tag">.lst-sub</span>
-          <span class="tag">.no-dash</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- UI 컴포넌트 -->
-  <section id="ui">
-    <h2 class="sec-title">UI 컴포넌트 · UI Components</h2>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-label">.sec-hd — 섹션 헤딩</div>
-        <div style="margin-top:12px;padding-bottom:24px;border-bottom:1px solid var(--border);">
-          <p style="font-size:11px;letter-spacing:0.5em;text-transform:uppercase;color:var(--sub03);margin-bottom:6px;">SECTION</p>
-          <h2 style="font-size:24px;font-weight:600;color:var(--main);">섹션 제목</h2>
-        </div>
-        <div style="font-size:12px;color:#aaa;margin-top:10px;">반드시 <code>.txt-wrap</code> 과 함께 사용</div>
-      </div>
-      <div class="card">
-        <div class="card-label">.badge — 뱃지</div>
-        <div style="display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap;">
-          <span style="background:var(--main);font-size:0.65em;padding:2px 10px 3px;font-weight:700;border-radius:4px;display:inline-block;color:#fff;line-height:1.5;">NEW</span>
-          <span style="background:var(--main);font-size:0.65em;padding:2px 10px 3px;font-weight:700;border-radius:4px;display:inline-block;color:#fff;line-height:1.5;">HOT</span>
-          <span style="font-size:18px;font-weight:600;">공지사항 <span style="background:var(--main);font-size:0.65em;padding:2px 10px 3px;font-weight:700;border-radius:4px;display:inline-block;color:#fff;line-height:1.5;vertical-align:middle;">NEW</span></span>
-        </div>
-        <div style="font-size:12px;color:#aaa;margin-top:10px;">line-height: 1.5 — lh 변수 체계 예외값</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-label">여백 초기화 · 유틸리티</div>
-      <div class="tag-row">
-        <span class="tag">.pdt-0</span>
-        <span class="tag">.pdb-0</span>
-        <span class="tag">.mgt-0</span>
-        <span class="tag">.mgb-0</span>
-        <span class="tag">.sp</span>
-        <span class="tag">.f-row</span>
-        <span class="tag">.f-col</span>
-        <span class="tag">.img-box</span>
-        <span class="tag">.bg-cv</span>
-        <span class="tag">.bg-ct</span>
-        <span class="tag">.x-sf</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 네이밍 컨벤션 -->
-  <section id="naming">
-    <h2 class="sec-title">네이밍 컨벤션 · Naming</h2>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-label">변수 구조</div>
-        <div style="font-family:monospace;font-size:13px;background:var(--sub02);padding:12px 16px;border-radius:8px;margin:8px 0;color:var(--main);">
-          --{prefix}-{category}-{variant}
-        </div>
-        <div style="font-size:12px;color:#888;line-height:1.8;">
-          prefix: <code>one-</code> (색상 변수 제외)<br>
-          구분자: <code>-</code> 대시만 허용<br>
-          선언 위치: <code>:root</code> 에만
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-label">클래스 구조</div>
-        <div style="font-family:monospace;font-size:13px;background:var(--sub02);padding:12px 16px;border-radius:8px;margin:8px 0;color:var(--main);">
-          {prefix}-{block}-{element}
-        </div>
-        <div style="font-size:12px;color:#888;line-height:1.8;">
-          케밥케이스 소문자<br>
-          컴포넌트 프리픽스 필수<br>
-          상태: <code>.is-{state}</code>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 금지 항목 -->
-  <section id="rules">
-    <h2 class="sec-title">사용 금지 항목 · Restrictions</h2>
-    <div class="card">
-      <ul class="rule-list">
-        <li>
-          <span class="no">✕</span>
-          <span class="txt">색상 하드코딩 — 변수 변경 시 누락 발생</span>
-          <span class="alt">var(--main-color)</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt"><code>space</code> 변수를 요소 간 gap에 사용 — 역할 혼용</span>
-          <span class="alt">gap 변수 사용</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt"><code>gap</code> 변수를 섹션 패딩에 사용 — 역할 혼용</span>
-          <span class="alt">space 변수 사용</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt"><code>.con-inner</code> 에 좌우 패딩 추가 — 레이아웃 구조 파괴</span>
-          <span class="alt">.section 에서 처리</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt"><code>.section</code> 좌우 safe 패딩 제거 — 필수 규칙 위반</span>
-          <span class="alt">항상 유지</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt"><code>--one-space-safe</code> 반응형 변경 — 16px 고정</span>
-          <span class="alt">변경 금지</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt">타입 클래스에 <code>line-height</code> 직접 선언 — 규칙 파괴</span>
-          <span class="alt">.lh-lg 추가</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt"><code>.txt-wrap</code> 없이 타입 클래스 사용 — 스코프 이탈</span>
-          <span class="alt">.txt-wrap 하위에서만</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt">미디어 쿼리 내 신규 변수 선언 — 스코프 혼란</span>
-          <span class="alt">:root 에 선언 후 재정의</span>
-        </li>
-        <li>
-          <span class="no">✕</span>
-          <span class="txt"><code>!important</code> 남용 — 여백 초기화·.lh-lg 에만 허용</span>
-          <span class="alt">필요 시 제한 사용</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-</main>
-
-<script>
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(a => a.classList.remove('active'));
-        const active = document.querySelector(`nav a[href="#${e.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { threshold: 0.3 });
-  sections.forEach(s => observer.observe(s));
-</script>
-
+</div>
 </body>
 </html>
